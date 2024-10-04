@@ -21,4 +21,5 @@ jobs:
         with:
           node-version: 16
       # - run: cd website && yarn install && yarn run build
+      - run: chmod 777 script/build-site-bash.sh
       - run: scripts/build-site-bash.sh
