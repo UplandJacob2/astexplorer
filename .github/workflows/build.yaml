@@ -1,0 +1,26 @@
+
+name: Build Site
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build Website
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      security-events: write
+      actions: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install
+        run: yarn install
+      - name: Build
+        run: yarn run build
