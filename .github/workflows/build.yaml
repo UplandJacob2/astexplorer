@@ -20,4 +20,5 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 16
-      - run: cd website && yarn install && yarn run build
+      # - run: cd website && yarn install && yarn run build
+      - run: scripts/build-site.sh
