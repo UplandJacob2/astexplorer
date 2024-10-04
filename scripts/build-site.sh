@@ -79,6 +79,7 @@ function bump_cache_breaker {
 function ask_commit {
   echo "Commit changes (y/n)"
   read answer
+  answer=y #SET MANUALLY
   if [ "$answer" != "${answer#[Yy]}" ] ;then
     git add .
     git commit -m"$1"
