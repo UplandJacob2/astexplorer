@@ -6,10 +6,10 @@ BRANCH=${1:-"website-latest"}
 TARGETPATH="../$(basename $(pwd))_$BRANCH"
 WORKING_DIR=$(pwd)
 
-if ! git diff --quiet && git diff --cached --quiet; then
-  echo >&2 "Cannot build, your index contains uncommitted changes."
-  exit 1
-fi
+# if ! git diff --quiet && git diff --cached --quiet; then
+#   echo >&2 "Cannot build, your index contains uncommitted changes."
+#   exit 1
+# fi
 
 trap cleanup EXIT
 
